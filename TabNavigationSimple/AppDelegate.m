@@ -1,13 +1,10 @@
-//
-//  AppDelegate.m
-//  TabNavigationSimple
-//
-//  Created by 叶一 on 2019/4/25.
-//  Copyright © 2019 heqiang. All rights reserved.
-//
+
 
 #import "AppDelegate.h"
-
+#import "HomeViewController.h"
+#import "SceneryViewController.h"
+#import "GirlViewController.h"
+#import "BoyViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +14,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    CGRect screnn = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:screnn];
+
+    //添加底部TabBarController
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    self.window.rootViewController = tabBarController;//根容器设置
+
+    //初始化首页UIViewController
+    UIViewController *mainViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    //初始化风景UIViewController
+    UIViewController *sceneryViewController = [[SceneryViewController alloc] initWithNibName:@"SceneryViewController" bundle:nil];
+    //初始化妹子UIViewController
+    UIViewController *girlViewController = [[GirlViewController alloc] initWithNibName:@"GirlViewController" bundle:nil];
+    //初始化帅哥UIViewController
+    UIViewController *boyViewController =  [[BoyViewController alloc] initWithNibName:@"BoyViewController" bundle:nil];
+
+    //将初始化好的UIViewController添加到UITabBarController中
+    tabBarController.viewControllers = @[mainViewController,sceneryViewController,girlViewController,boyViewController];
+    
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

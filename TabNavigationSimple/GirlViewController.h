@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  GirlViewController.h
 //  TabNavigationSimple
 //
 //  Created by 叶一 on 2019/4/25.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface GirlViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
